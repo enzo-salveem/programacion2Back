@@ -25,8 +25,8 @@ router.get("/historialTransacciones", async (req, res, next) => {
 
 router.get("/Transacciones", async (req, res, next) => {
   try {
-    const username = req.query.username;
-    let response = res.send(await Transactions.obtenerTransacciones(username));
+    const id = req.query.id;
+    let response = res.send(await Transactions.obtenerTransacciones(id));
     return response;
   } catch (err: any) {
     console.log(err.message);
